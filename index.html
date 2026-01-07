@@ -1,69 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Data Science Portfolio</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akram | Premium Data Science Portfolio</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Locomotive -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body data-scroll-container>
 
-    <div id="loader">
-        <div class="loader-content">
-            <div class="loader-bar"></div>
-            <p>INITIALIZING PORTFOLIO...</p>
+<!-- Loader -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-bar"></div>
+        <p>INITIALIZING PORTFOLIO...</p>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor"></div>
+<div class="cursor-blob"></div>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">IT'S<span>ME</span></div>
+    <ul class="nav-links">
+        <li><a href="#projects" data-scroll-to>Projects</a></li>
+        <li><a href="#skills" data-scroll-to>Skills</a></li>
+        <li><div class="theme-toggle" id="themeBtn"><i class="fas fa-moon"></i></div></li>
+    </ul>
+</nav>
+
+<!-- Content -->
+<div class="scroll-content">
+
+<header class="hero" data-scroll-section>
+    <div class="hero-content">
+        <h1 class="gsap-reveal">Hi, I'm <span class="highlight">Akram</span>.</h1>
+        <p class="gsap-reveal">Building the future of intelligence through predictive analytics.</p>
+        <div class="hero-btns gsap-reveal">
+            <div class="magnetic-wrap">
+                <a href="#projects" class="btn btn-primary magnetic" data-scroll-to>View Work</a>
+            </div>
         </div>
     </div>
+</header>
 
-    <nav>
-        <div class="logo">IT'S<span>ME</span></div>
-        <ul class="nav-links">
-            <li><a href="#projects" data-scroll-to>Projects</a></li>
-            <li><a href="#skills" data-scroll-to>Skills</a></li>
-            <li><div class="theme-toggle" id="themeBtn"><i class="fas fa-moon"></i></div></li>
-        </ul>
-    </nav>
+<section id="projects" data-scroll-section>
+    <h2 class="section-title reveal">Featured Work</h2>
 
-    <div class="scroll-content">
-        <header class="hero" data-scroll-section>
-            <div class="hero-content">
-                <h1 class="gsap-reveal">Hi, I'm <span class="highlight">Akram</span>.</h1>
-                <p class="gsap-reveal">Building the future of intelligence through predictive analytics.</p>
-                <div class="hero-btns gsap-reveal">
-                    <div class="magnetic-wrap">
-                        <a href="#projects" class="btn btn-primary magnetic" data-scroll-to>View Work</a>
-                    </div>
-                </div>
+    <div class="project-grid">
+        <div class="project-card reveal"
+            data-title="Deep Learning Churn Engine"
+            data-desc="High-accuracy churn prediction using deep neural networks.">
+            <div class="project-img"><i class="fas fa-brain"></i></div>
+            <div class="project-content">
+                <h3>Churn Engine</h3>
+                <p>98% precision prediction system</p>
             </div>
-        </header>
+        </div>
 
-        <section id="projects" data-scroll-section>
-            <h2 class="section-title" data-scroll data-scroll-speed="1">Featured Work</h2>
-            <div class="project-grid">
-                <div class="project-card" data-scroll data-scroll-speed="1.5">
-                    <div class="project-img img-ml"><i class="fas fa-brain"></i></div>
-                    <div class="project-content">
-                        <h3>Deep Learning Churn Engine</h3>
-                        <p>Predicting user behavior with 98% precision.</p>
-                    </div>
-                </div>
-                <div class="project-card" data-scroll data-scroll-speed="0.5">
-                    <div class="project-img img-nlp"><i class="fas fa-comment"></i></div>
-                    <div class="project-content">
-                        <h3>NLP Health Assistant</h3>
-                        <p>Sentiment analysis for medical diagnosis.</p>
-                    </div>
-                </div>
+        <div class="project-card reveal"
+            data-title="NLP Health Assistant"
+            data-desc="AI assistant for medical sentiment & diagnosis support.">
+            <div class="project-img"><i class="fas fa-comment"></i></div>
+            <div class="project-content">
+                <h3>NLP Assistant</h3>
+                <p>Medical sentiment analysis</p>
             </div>
-        </section>
+        </div>
     </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
+<section id="about" data-scroll-section>
+    <h2 class="section-title reveal">About Me</h2>
+    <div class="about-container reveal">
+        <p>
+            I’m a data scientist focused on building intelligent systems using machine learning,
+            deep learning, and scalable analytics. I turn complex data into real-world impact.
+        </p>
+    </div>
+</section>
+
+<section id="skills" data-scroll-section>
+    <h2 class="section-title reveal">Skills</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card reveal" data-level="90">
+            <i class="fab fa-python"></i><span>Python</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+        </div>
+
+        <div class="skill-card reveal" data-level="85">
+            <i class="fas fa-robot"></i><span>Machine Learning</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+        </div>
+
+        <div class="skill-card reveal" data-level="80">
+            <i class="fas fa-network-wired"></i><span>Deep Learning</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+        </div>
+    </div>
+</section>
+
+<footer data-scroll-section>
+    <p>© 2026 Akram</p>
+</footer>
+
+</div>
+
+<!-- Project Modal -->
+<div class="project-modal" id="projectModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
