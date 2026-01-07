@@ -3,16 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Scientist | Your Name</title>
+    <title>Alex Rivera | Data Scientist Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1 id="greeting">Hello, I'm a Data Scientist</h1>
-        <button id="colorBtn">Change Theme</button>
+    <nav class="navbar">
+        <div class="logo">AR<span>.dev</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="mailto:your@email.com" class="cta-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Turning Data into <span class="highlight">Impact</span></h1>
+            <p>I build machine learning models and data pipelines to solve real-world problems.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="#" class="btn secondary">Download CV</a>
+            </div>
+        </div>
     </header>
 
-    <script src="script.js"></script>
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-card"><i class="fab fa-python"></i> <h3>Python</h3><p>Pandas, Scikit-learn, PyTorch</p></div>
+            <div class="skill-card"><i class="fas fa-database"></i> <h3>SQL</h3><p>PostgreSQL, BigQuery, NoSQL</p></div>
+            <div class="skill-card"><i class="fas fa-chart-area"></i> <h3>Visualization</h3><p>Tableau, Plotly, PowerBI</p></div>
+            <div class="skill-card"><i class="fas fa-cloud"></i> <h3>Cloud</h3><p>AWS, Docker, Airflow</p></div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-light">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bbda48658a7d?auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="project-info">
+                    <h3>Customer Churn Predictor</h3>
+                    <p>Random Forest model achieving 92% accuracy in identifying at-risk subscribers.</p>
+                    <div class="tags"><span>Python</span> <span>ML</span></div>
+                    <a href="#" class="project-link">View GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1518186239751-6467fff91f93?auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="project-info">
+                    <h3>NLP Sentiment Analysis</h3>
+                    <p>Real-time analysis of Twitter streams using Transformers and BERT.</p>
+                    <div class="tags"><span>NLP</span> <span>PyTorch</span></div>
+                    <a href="#" class="project-link">View GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Alex Rivera. Built with HTML, CSS, and Curiosity.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
 </body>
 </html>
