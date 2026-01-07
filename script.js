@@ -1,67 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
-    const themeBtn = document.getElementById('themeBtn');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projects = document.querySelectorAll('.project-card');
-    const body = document.body;
 
-    // 1. Theme Toggle Logic
-    themeBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        const icon = themeBtn.querySelector('i');
+    // 1. Loader Animation
+    const tlLoader = gsap.timeline();
+    tlLoader.to(".loader-bar", { width: "100%", duration: 1.5, ease: "power2.inOut" })
+            .to("#loader", { opacity: 0, pointerEvents: "none", duration: 0.8 });
+
+    // 2. Initialize Locomotive Scroll
+    const scroller = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
+    });
+
+    // 3. GSAP Hero Reveal
+    tlLoader.from(".gsap-reveal", {
+        y: 100, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power4.out"
+    }, "-=0.3");
+
+    // 4. Magnetic Button Logic
+    const magneticBtn = document.querySelector('.magnetic');
+    const magneticWrap = document.querySelector('.magnetic-wrap');
+
+    magneticWrap.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = magneticWrap.getBoundingClientRect();
+        const x = e.clientX - (left + width / 2);
+        const y = e.clientY - (top + height / 2);
         
-        if (body.classList.contains('dark-mode')) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-            localStorage.setItem('portfolio-theme', 'dark');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-            localStorage.setItem('portfolio-theme', 'light');
-        }
-    });
-
-    // Check Local Storage for Theme
-    if (localStorage.getItem('portfolio-theme') === 'dark') {
-        body.classList.add('dark-mode');
-        themeBtn.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-    }
-
-    // 2. Filter Logic
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update UI for buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const filterValue = btn.getAttribute('data-filter');
-            
-            projects.forEach(project => {
-                const category = project.getAttribute('data-category');
-                if (filterValue === 'all' || category === filterValue) {
-                    project.style.display = 'block';
-                    // Re-trigger animation
-                    setTimeout(() => project.style.opacity = '1', 10);
-                } else {
-                    project.style.opacity = '0';
-                    setTimeout(() => project.style.display = 'none', 300);
-                }
-            });
+        gsap.to(magneticBtn, {
+            x: x * 0.4,
+            y: y * 0.4,
+            duration: 0.3,
+            ease: "power2.out"
         });
     });
 
-    // 3. Scroll Reveal Animation (Intersection Observer)
-    const observerOptions = {
-        threshold: 0.15
-    };
+    magneticWrap.addEventListener('mouseleave', () => {
+        gsap.to(magneticBtn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
+    });
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Once it reveals, we don't need to observe it anymore
-                observer.unobserve(entry.target);
-            }
+    // 5. ScrollTo Navigation
+    const scrollLinks = document.querySelectorAll('[data-scroll-to]');
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.getAttribute('href');
+            scroller.scrollTo(target);
         });
-    }, observerOptions);
+    });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Sync Locomotive on update
+    window.addEventListener('load', () => scroller.update());
 });
