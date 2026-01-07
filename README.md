@@ -1,54 +1,46 @@
-# Md Ahmod Akram Choudhury
-**Senior UX Designer & Researcher** *Location: San Francisco, CA | Remote Friendly*
+# Role : Data Scientist
+**Predictive Modeling | Machine Learning | Data Engineering**
+*Aligarh, IN • [yourname@email.com](mailto:yourname@email.com) • [Portfolio](https://yourportfolio.com)*
 
 ---
 
-### 👤 Profile Summary
-Highly analytical and creative **UX Designer** with over 8 years of experience building scalable SaaS products. Expert in translating complex user requirements into elegant, accessible digital experiences. Dedicated to data-driven design and cross-functional collaboration.
+### 📊 Executive Summary
+Data Scientist with 5+ years of experience in building end-to-end machine learning pipelines and turning complex datasets into actionable business insights. Proven track record in optimizing customer churn models and automating ETL processes. Passionate about Deep Learning and Ethical AI.
 
 ---
 
-### 🛠️ Core Competencies
-* **Design:** UI/UX Design, Rapid Prototyping, Design Systems, Mobile-First Design.
-* **Research:** User Interviews, A/B Testing, Usability Testing, Persona Mapping.
-* **Tools:** Figma, Adobe Creative Suite, Sketch, Framer, Jira.
-* **Technical:** HTML/CSS, Basic React, Git/GitHub.
+### 🛠️ Technical Stack
+* **Languages:** Python (Pandas, Scikit-Learn, PyTorch), R, SQL (PostgreSQL, BigQuery).
+* **Data Visualization:** Tableau, PowerBI, Matplotlib, Plotly.
+* **Tools & Cloud:** AWS (S3, SageMaker), Docker, Git, Apache Spark.
+* **Specialties:** NLP, Computer Vision, Time-Series Forecasting, A/B Testing.
 
 ---
 
 ### 💼 Professional Experience
 
-#### **Senior UX Designer** | TechFlow Solutions
+#### **Senior Data Scientist** | DataLogix Corp
 *Jan 2021 – Present*
-* Led the redesign of the core dashboard, resulting in a **25% increase** in daily active users.
-* Established a company-wide Design System that reduced front-end development time by 30%.
-* Mentored a team of 4 junior designers and conducted weekly design sprints.
+* Developed a **Random Forest** classification model to predict user churn, reducing attrition by **18%** in the first year.
+* Architected an automated data pipeline using **Airflow**, reducing manual reporting time by 40 hours/month.
+* Collaborated with Product teams to design A/B tests for new feature launches, ensuring 95% statistical significance.
 
-#### **Product Designer** | Creative Pulse Agency
-*June 2017 – Dec 2020*
-* Delivered end-to-end design solutions for Fortune 500 clients in the fintech sector.
-* Collaborated directly with stakeholders to define product roadmaps and MVP features.
-
----
-
-### 🚀 Featured Projects
-1.  **[Project Name One](https://yourportfolio.com/project1)**: A comprehensive mobile app design for sustainable habit tracking.
-2.  **[Project Name Two](https://yourportfolio.com/project2)**: E-commerce checkout optimization study that decreased cart abandonment by 15%.
+#### **Data Analyst** | Insight Analytics
+*June 2018 – Dec 2020*
+* Cleaned and processed datasets of 1M+ rows using SQL and Python.
+* Built a dashboard that identified $200k in annual cost savings by optimizing supply chain logistics.
 
 ---
 
-### 🎓 Education & Certifications
-* **B.S. in Graphic Design** | University of Technology
-* **Google UX Design Professional Certificate** | Coursera
-* **Nielsen Norman Group (NN/g)** | UX Management Certification
+### 🧪 Key Projects
+* **[Predictive Stock Market Tool](https://github.com/your-repo)**: Built a Long Short-Term Memory (LSTM) network to forecast price movements.
+* **[Sentiment Analysis Engine](https://github.com/your-repo)**: Processed 50k+ Twitter mentions using NLP to gauge brand health in real-time.
 
 ---
 
-### 🌐 Connect With Me
+### 🌐 Let's Connect
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
-[![Portfolio](https://img.shields.io/badge/Portfolio-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yourportfolio.com)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hello@example.com)
+[![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white)](https://kaggle.com/yourusername)
 
 ---
-> "Design is not just what it looks like and feels like. Design is how it works." — Steve Jobs
