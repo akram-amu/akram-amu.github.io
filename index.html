@@ -30,34 +30,51 @@
 <div class="cursor-blob"></div>
 
 <!-- Navigation -->
-<nav>
-    <div class="logo">IT'S<span>ME</span></div>
-    <ul class="nav-links">
-        <li><a href="#projects" data-scroll-to>Projects</a></li>
-        <li><a href="#skills" data-scroll-to>Skills</a></li>
-        <li><div class="theme-toggle" id="themeBtn"><i class="fas fa-moon"></i></div></li>
-    </ul>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="https://via.placeholder.com/45x45?text=AR" alt="Logo" class="logo-img">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" data-scroll-to class="nav-link">Home</a></li>
+            <li><a href="#about" data-scroll-to class="nav-link">About</a></li>
+            <li><a href="#projects" data-scroll-to class="nav-link">Projects</a></li>
+            <li><a href="#skills" data-scroll-to class="nav-link">Skills</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#contact" class="nav-btn-contact" data-scroll-to>Get in Touch</a>
+            <div class="theme-toggle" id="themeBtn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </div>
 </nav>
 
 <!-- Content -->
 <div class="scroll-content">
 
-<header class="hero" data-scroll-section>
-    <div class="hero-content">
-        <h1 class="gsap-reveal">Hi, I'm <span class="highlight">Akram</span>.</h1>
-        <p class="gsap-reveal">Building the future of intelligence through predictive analytics.</p>
-        <div class="hero-btns gsap-reveal">
-            <div class="magnetic-wrap">
-                <a href="#projects" class="btn btn-primary magnetic" data-scroll-to>View Work</a>
+<header class="hero" id="home" data-scroll-section>
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="gsap-reveal hero-title">Hi, I'm <span class="highlight">Akram</span></h1>
+                <p class="gsap-reveal hero-subtitle">Building intelligent systems through machine learning & data science</p>
+            </div>
+            <div class="hero-cta gsap-reveal">
+                <a href="#projects" class="btn btn-primary magnetic" data-scroll-to>Explore My Work</a>
+                <a href="#contact" class="btn btn-secondary magnetic" data-scroll-to>Contact Me</a>
             </div>
         </div>
+        <div class="hero-accent"></div>
     </div>
 </header>
 
-<section id="projects" data-scroll-section>
-    <h2 class="section-title reveal">Featured Work</h2>
+<section id="projects" class="section-projects" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">Featured Work</h2>
+        <p class="section-subtitle reveal">Showcase of my recent projects and achievements</p>
 
-    <div class="project-grid">
+        <div class="project-grid">
         <div class="project-card reveal"
             data-title="Deep Learning Churn Engine"
             data-desc="High-accuracy churn prediction using deep neural networks.">
@@ -78,41 +95,126 @@
             </div>
         </div>
     </div>
-</section>
-
-<section id="about" data-scroll-section>
-    <h2 class="section-title reveal">About Me</h2>
-    <div class="about-container reveal">
-        <p>
-            I’m a data scientist focused on building intelligent systems using machine learning,
-            deep learning, and scalable analytics. I turn complex data into real-world impact.
-        </p>
     </div>
 </section>
 
-<section id="skills" data-scroll-section>
-    <h2 class="section-title reveal">Skills</h2>
-
-    <div class="skills-grid">
-        <div class="skill-card reveal" data-level="90">
-            <i class="fab fa-python"></i><span>Python</span>
-            <div class="skill-bar"><div class="skill-progress"></div></div>
-        </div>
-
-        <div class="skill-card reveal" data-level="85">
-            <i class="fas fa-robot"></i><span>Machine Learning</span>
-            <div class="skill-bar"><div class="skill-progress"></div></div>
-        </div>
-
-        <div class="skill-card reveal" data-level="80">
-            <i class="fas fa-network-wired"></i><span>Deep Learning</span>
-            <div class="skill-bar"><div class="skill-progress"></div></div>
+<section id="about" class="section-about" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-wrapper">
+            <div class="about-content reveal">
+                <div class="about-block">
+                    <span class="about-icon">🧠</span>
+                    <p>I'm a data scientist focused on building intelligent systems using machine learning, deep learning, and scalable analytics. I turn complex data into real-world impact.</p>
+                </div>
+                <div class="about-block">
+                    <span class="about-icon">🚀</span>
+                    <p>With expertise in predictive modeling, NLP, and advanced data visualization, I specialize in creating end-to-end solutions that solve complex business challenges.</p>
+                </div>
+                <div class="about-block">
+                    <span class="about-icon">💡</span>
+                    <p>I'm committed to continuous learning and staying at the forefront of innovations, whether building neural networks, automating pipelines, or crafting visualizations.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<footer data-scroll-section>
-    <p>© 2026 Akram</p>
+<section id="skills" class="section-skills" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">Technical Skills</h2>
+        <p class="section-subtitle reveal">Technologies and tools I work with</p>
+
+        <div class="skills-categories">
+            <!-- Data Collection & Automation -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">🕷️</span> Data Collection & Automation</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Web Scraping:</strong> Selenium, Beautiful Soup
+                    </div>
+                    <div class="skill-item">
+                        <strong>Automation:</strong> Browser Automation, Data Mining
+                    </div>
+                    <div class="skill-item">
+                        <strong>Database:</strong> MySQL
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Science & AI -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">🧠</span> Data Science & AI</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Languages:</strong> Python (NumPy, Pandas)
+                    </div>
+                    <div class="skill-item">
+                        <strong>Machine Learning:</strong> Scikit-Learn, SciPy
+                    </div>
+                    <div class="skill-item">
+                        <strong>Deep Learning:</strong> TensorFlow, Keras
+                    </div>
+                    <div class="skill-item">
+                        <strong>Analysis:</strong> Exploratory Data Analysis (EDA)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization & BI -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">📊</span> Visualization & BI</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Python:</strong> Matplotlib, Seaborn, Plotly
+                    </div>
+                    <div class="skill-item">
+                        <strong>Business Intelligence:</strong> Tableau, Power BI
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Stack Development -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">💻</span> Full Stack Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Frontend:</strong> React.js, HTML5, CSS3, JavaScript
+                    </div>
+                    <div class="skill-item">
+                        <strong>Backend:</strong> Node.js, REST APIs
+                    </div>
+                    <div class="skill-item">
+                        <strong>Core:</strong> C, C++
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="contact" class="section-contact" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <p class="section-subtitle reveal">Get in touch and let's collaborate on something amazing</p>
+        <div class="contact-content reveal">
+            <a href="mailto:contact@akram.com" class="btn btn-primary">Send an Email</a>
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Akram. All rights reserved.</p>
+        <p>Crafted with <span class="heart">♥</span> using modern web technologies</p>
+    </div>
 </footer>
 
 </div>
