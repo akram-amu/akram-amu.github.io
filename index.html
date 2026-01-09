@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akram | Data Science Portfolio</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- New fonts: Poppins for headings, Roboto for body fallback -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Locomotive -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<link rel="stylesheet" href="style.css">
+<!-- Alternate theme (disabled by default) -->
+<link id="alt-theme" rel="stylesheet" href="alt-style.css" disabled>
+<!-- Light theme (disabled by default) -->
+<link id="light-theme" rel="stylesheet" href="light-style.css" disabled>
+</head>
+
+<body>
+
+<!-- Loader -->
+<div id="loader" role="status" aria-live="polite">
+    <div class="loader-content" aria-hidden="false">
+        <div class="loader-visual">
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <div class="loader-bars" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="loader-info">
+            <div class="loader-bar" aria-hidden="true"></div>
+            <p class="loader-label">INITIALIZING PORTFOLIO...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor"></div>
+<div class="cursor-blob"></div>
+<div class="cursor-dots"></div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="https://via.placeholder.com/45x45?text=AR" alt="Logo" class="logo-img">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" data-scroll-to class="nav-link">Home</a></li>
+            <li><a href="#about" data-scroll-to class="nav-link">About</a></li>
+            <li><a href="#projects" data-scroll-to class="nav-link">Projects</a></li>
+            <li><a href="#skills" data-scroll-to class="nav-link">Skills</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#contact" class="nav-btn-contact" data-scroll-to>Get in Touch</a>
+            <div class="theme-toggle" id="themeBtn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<div class="scroll-content">
+
+<header class="hero" id="home" data-scroll-section>
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="gsap-reveal hero-title">Hi, I'm <span id="scramble" class="highlight">Akram</span></h1>
+                <p id="scramble-sub" class="gsap-reveal hero-subtitle">Building intelligent systems through machine learning & data science</p>
+            </div>
+            <div class="hero-cta gsap-reveal">
+                <div class="magnetic-wrap">
+                    <a href="#projects" class="btn btn-primary magnetic" data-scroll-to>Explore My Work</a>
+                </div>
+                <a href="#contact" class="btn btn-secondary" data-scroll-to>Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-accent"></div>
+    </div>
+</header>
+
+<section id="projects" class="section-projects" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">Featured Work</h2>
+        <p class="section-subtitle reveal">Showcase of my recent projects and achievements</p>
+
+        <div class="project-grid">
+        <div class="project-card reveal"
+            data-title="Deep Learning Churn Engine"
+            data-desc="High-accuracy churn prediction using deep neural networks.">
+            <div class="project-img"><i class="fas fa-brain"></i></div>
+            <div class="project-content">
+                <h3>Churn Engine</h3>
+                <p>98% precision prediction system</p>
+            </div>
+        </div>
+
+        <div class="project-card reveal"
+            data-title="NLP Health Assistant"
+            data-desc="AI assistant for medical sentiment & diagnosis support.">
+            <div class="project-img"><i class="fas fa-comment"></i></div>
+            <div class="project-content">
+                <h3>NLP Assistant</h3>
+                <p>Medical sentiment analysis</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="about" class="section-about" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-wrapper">
+            <div class="about-content reveal">
+                <div class="about-block">
+                    <span class="about-icon">🧠</span>
+                    <p>I'm a data scientist focused on building intelligent systems using machine learning, deep learning, and scalable analytics. I turn complex data into real-world impact.</p>
+                </div>
+                <div class="about-block">
+                    <span class="about-icon">🚀</span>
+                    <p>With expertise in predictive modeling, NLP, and advanced data visualization, I specialize in creating end-to-end solutions that solve complex business challenges.</p>
+                </div>
+                <div class="about-block">
+                    <span class="about-icon">💡</span>
+                    <p>I'm committed to continuous learning and staying at the forefront of innovations, whether building neural networks, automating pipelines, or crafting visualizations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section-skills" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">Technical Skills</h2>
+        <p class="section-subtitle reveal">Technologies and tools I work with</p>
+
+        <div class="skills-categories">
+            <!-- Data Collection & Automation -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">🕷️</span> Data Collection & Automation</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Web Scraping:</strong> Selenium, Beautiful Soup
+                    </div>
+                    <div class="skill-item">
+                        <strong>Automation:</strong> Browser Automation, Data Mining
+                    </div>
+                    <div class="skill-item">
+                        <strong>Database:</strong> MySQL
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Science & AI -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">🧠</span> Data Science & AI</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Languages:</strong> Python (NumPy, Pandas)
+                    </div>
+                    <div class="skill-item">
+                        <strong>Machine Learning:</strong> Scikit-Learn, SciPy
+                    </div>
+                    <div class="skill-item">
+                        <strong>Deep Learning:</strong> TensorFlow, Keras
+                    </div>
+                    <div class="skill-item">
+                        <strong>Analysis:</strong> Exploratory Data Analysis (EDA)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization & BI -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">📊</span> Visualization & BI</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Python:</strong> Matplotlib, Seaborn, Plotly
+                    </div>
+                    <div class="skill-item">
+                        <strong>Business Intelligence:</strong> Tableau, Power BI
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Stack Development -->
+            <div class="skill-category reveal">
+                <h3><span class="category-icon">💻</span> Full Stack Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <strong>Frontend:</strong> React.js, HTML5, CSS3, JavaScript
+                    </div>
+                    <div class="skill-item">
+                        <strong>Backend:</strong> Node.js, REST APIs
+                    </div>
+                    <div class="skill-item">
+                        <strong>Core:</strong> C, C++
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="contact" class="section-contact" data-scroll-section>
+    <div class="section-container">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <p class="section-subtitle reveal">Get in touch and let's collaborate on something amazing</p>
+        <div class="contact-content reveal">
+            <a href="mailto:contact@akram.com" class="btn btn-primary">Send an Email</a>
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Akram. All rights reserved.</p>
+        <p>Crafted with <span class="heart">♥</span> using modern web technologies</p>
+    </div>
+</footer>
+
+</div>
+
+<!-- Project Modal -->
+<div class="project-modal" id="projectModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.2/ScrambleTextPlugin.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
