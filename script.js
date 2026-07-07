@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             heroScr.to('#scramble', {
                 duration: 1.6,
                 scrambleText: {
-                    text: 'Data Scientist',
+                    text: 'AI Engineer',
                     chars: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
                     speed: 0.6
                 },
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const subEl = document.querySelector('#scramble-sub');
             if (subEl) {
                 const subOriginal = subEl.textContent.trim();
-                const subAlt = 'Machine Learning & Data Science';
+                const subAlt = 'Generative AI & AI Agents';
                 const subScr = gsap.timeline({ repeat: -1, repeatDelay: 1.8 });
                 subScr.to('#scramble-sub', {
                     duration: 2.0,
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTitle = document.getElementById("modalTitle");
     const modalDesc = document.getElementById("modalDesc");
 
-    document.querySelectorAll(".project-card").forEach(card => {
+    document.querySelectorAll(".project-card, .project-card-featured").forEach(card => {
         card.addEventListener("click", () => {
             modalTitle.textContent = card.dataset.title;
             modalDesc.textContent = card.dataset.desc;
