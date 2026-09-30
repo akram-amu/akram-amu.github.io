@@ -1,260 +1,885 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Akram | Data Science Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Md Ahmod Akram Choudhury - AI Engineer & Generative AI Developer specializing in LangGraph, LangChain, LLMs, RAG Pipelines, and Machine Learning Systems." />
+    <meta name="keywords" content="Md Ahmod Akram Choudhury, Akram, AI Engineer, Generative AI Developer, Machine Learning, LangChain, LangGraph, RAG, Python, AMU, Portfolio" />
+    <meta name="author" content="Md Ahmod Akram Choudhury" />
+    <title>Md Ahmod Akram Choudhury | AI Engineer & Generative AI Portfolio</title>
 
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- New fonts: Poppins for headings, Roboto for body fallback -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Locomotive -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <!-- FontAwesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Animate CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-<link rel="stylesheet" href="style.css">
-<!-- Alternate theme (disabled by default) -->
-<link id="alt-theme" rel="stylesheet" href="alt-style.css" disabled>
-<!-- Light theme (disabled by default) -->
-<link id="light-theme" rel="stylesheet" href="light-style.css" disabled>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<!-- Loader -->
-<div id="loader" role="status" aria-live="polite">
-    <div class="loader-content" aria-hidden="false">
-        <div class="loader-visual">
-            <div class="loader-spinner" aria-hidden="true"></div>
-            <div class="loader-bars" aria-hidden="true">
-                <span></span><span></span><span></span>
+    <!-- Canvas Particle Mesh Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar-header">
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                <span class="logo-text">AKRAM<span class="accent-dot">.AI</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#activity" class="nav-link">Activity</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-nav-cta">
+                    <span>Get in Touch</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-        </div>
-        <div class="loader-info">
-            <div class="loader-bar" aria-hidden="true"></div>
-            <p class="loader-label">INITIALIZING PORTFOLIO...</p>
-        </div>
-    </div>
-</div>
+        </nav>
+    </header>
 
-<!-- Cursor -->
-<div class="cursor"></div>
-<div class="cursor-blob"></div>
-<div class="cursor-dots"></div>
+    <!-- Main Wrapper -->
+    <main>
 
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <img src="https://via.placeholder.com/45x45?text=AR" alt="Logo" class="logo-img">
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#home" data-scroll-to class="nav-link">Home</a></li>
-            <li><a href="#about" data-scroll-to class="nav-link">About</a></li>
-            <li><a href="#projects" data-scroll-to class="nav-link">Projects</a></li>
-            <li><a href="#skills" data-scroll-to class="nav-link">Skills</a></li>
-        </ul>
-        <div class="nav-actions">
-            <a href="#contact" class="nav-btn-contact" data-scroll-to>Get in Touch</a>
-            <div class="theme-toggle" id="themeBtn" title="Toggle Theme">
-                <i class="fas fa-moon"></i>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- Content -->
-<div class="scroll-content">
-
-<header class="hero" id="home" data-scroll-section>
-    <div class="hero-wrapper">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="gsap-reveal hero-title">Hi, I'm <span id="scramble" class="highlight">Akram</span></h1>
-                <p id="scramble-sub" class="gsap-reveal hero-subtitle">Building intelligent systems through machine learning & data science</p>
-            </div>
-            <div class="hero-cta gsap-reveal">
-                <div class="magnetic-wrap">
-                    <a href="#projects" class="btn btn-primary magnetic" data-scroll-to>Explore My Work</a>
-                </div>
-                <a href="#contact" class="btn btn-secondary" data-scroll-to>Contact Me</a>
-            </div>
-        </div>
-        <div class="hero-accent"></div>
-    </div>
-</header>
-
-<section id="projects" class="section-projects" data-scroll-section>
-    <div class="section-container">
-        <h2 class="section-title reveal">Featured Work</h2>
-        <p class="section-subtitle reveal">Showcase of my recent projects and achievements</p>
-
-        <div class="project-grid">
-        <div class="project-card reveal"
-            data-title="Deep Learning Churn Engine"
-            data-desc="High-accuracy churn prediction using deep neural networks.">
-            <div class="project-img"><i class="fas fa-brain"></i></div>
-            <div class="project-content">
-                <h3>Churn Engine</h3>
-                <p>98% precision prediction system</p>
-            </div>
-        </div>
-
-        <div class="project-card reveal"
-            data-title="NLP Health Assistant"
-            data-desc="AI assistant for medical sentiment & diagnosis support.">
-            <div class="project-img"><i class="fas fa-comment"></i></div>
-            <div class="project-content">
-                <h3>NLP Assistant</h3>
-                <p>Medical sentiment analysis</p>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-<section id="about" class="section-about" data-scroll-section>
-    <div class="section-container">
-        <h2 class="section-title reveal">About Me</h2>
-        <div class="about-wrapper">
-            <div class="about-content reveal">
-                <div class="about-block">
-                    <span class="about-icon">🧠</span>
-                    <p>I'm a data scientist focused on building intelligent systems using machine learning, deep learning, and scalable analytics. I turn complex data into real-world impact.</p>
-                </div>
-                <div class="about-block">
-                    <span class="about-icon">🚀</span>
-                    <p>With expertise in predictive modeling, NLP, and advanced data visualization, I specialize in creating end-to-end solutions that solve complex business challenges.</p>
-                </div>
-                <div class="about-block">
-                    <span class="about-icon">💡</span>
-                    <p>I'm committed to continuous learning and staying at the forefront of innovations, whether building neural networks, automating pipelines, or crafting visualizations.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="skills" class="section-skills" data-scroll-section>
-    <div class="section-container">
-        <h2 class="section-title reveal">Technical Skills</h2>
-        <p class="section-subtitle reveal">Technologies and tools I work with</p>
-
-        <div class="skills-categories">
-            <!-- Data Collection & Automation -->
-            <div class="skill-category reveal">
-                <h3><span class="category-icon">🕷️</span> Data Collection & Automation</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <strong>Web Scraping:</strong> Selenium, Beautiful Soup
+        <!-- HERO SECTION -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                
+                <div class="hero-content">
+                    <div class="status-badge glow-pulse">
+                        <span class="status-indicator"></span>
+                        <span>Available for AI & ML Engineering Roles</span>
                     </div>
-                    <div class="skill-item">
-                        <strong>Automation:</strong> Browser Automation, Data Mining
+
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="text-gradient">Md Ahmod Akram</span>
+                    </h1>
+
+                    <div class="hero-typing-wrapper">
+                        <span class="typing-prefix">I build</span>
+                        <span id="typing-text" class="typing-highlight"></span>
+                        <span class="typing-cursor">|</span>
                     </div>
-                    <div class="skill-item">
-                        <strong>Database:</strong> MySQL
+
+                    <p class="hero-description">
+                        AI Engineering student at <strong>Aligarh Muslim University</strong> specializing in 
+                        <strong>Generative AI</strong>, <strong>Agentic Workflows</strong> (LangGraph / LangChain), 
+                        <strong>RAG Architectures</strong>, and production machine learning systems.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary glow-btn">
+                            <i class="fa-solid fa-rocket"></i> Explore Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fa-solid fa-paper-plane"></i> Let's Connect
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/mdakram2001" target="_blank" aria-label="GitHub" class="social-icon" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/md-ahmod-akram-choudhury" target="_blank" aria-label="LinkedIn" class="social-icon" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://leetcode.com/akram2001" target="_blank" aria-label="LeetCode" class="social-icon" title="LeetCode Profile">
+                            <i class="fa-solid fa-code"></i>
+                        </a>
+                        <a href="mailto:ahmodakramchoudhury@gmail.com" aria-label="Email" class="social-icon" title="Send Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Data Science & AI -->
-            <div class="skill-category reveal">
-                <h3><span class="category-icon">🧠</span> Data Science & AI</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <strong>Languages:</strong> Python (NumPy, Pandas)
+                <!-- Interactive Hero AI Terminal / Sandbox Widget -->
+                <div class="hero-widget">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="window-controls">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="terminal-tabs">
+                                <button class="term-tab active" data-tab="agent"><i class="fa-solid fa-robot"></i> agent.py</button>
+                                <button class="term-tab" data-tab="rag"><i class="fa-solid fa-database"></i> rag_pipeline.py</button>
+                                <button class="term-tab" data-tab="output"><i class="fa-solid fa-terminal"></i> Console</button>
+                            </div>
+                        </div>
+
+                        <div class="terminal-body">
+                            <!-- Tab 1: Agent Code -->
+                            <div class="tab-pane active" id="tab-agent">
+                                <pre><code><span class="token-keyword">from</span> langgraph.graph <span class="token-keyword">import</span> StateGraph, END
+<span class="token-keyword">from</span> langchain_openai <span class="token-keyword">import</span> ChatOpenAI
+
+<span class="token-comment"># Define Agent State & Workflow</span>
+workflow = StateGraph(AgentState)
+workflow.add_node(<span class="token-string">"researcher"</span>, run_web_search)
+workflow.add_node(<span class="token-string">"rag_retriever"</span>, query_vector_store)
+workflow.add_node(<span class="token-string">"synthesizer"</span>, generate_response)
+
+workflow.set_entry_point(<span class="token-string">"rag_retriever"</span>)
+workflow.add_edge(<span class="token-string">"rag_retriever"</span>, <span class="token-string">"synthesizer"</span>)
+app = workflow.compile()</code></pre>
+                            </div>
+
+                            <!-- Tab 2: RAG Pipeline -->
+                            <div class="tab-pane" id="tab-rag">
+                                <pre><code><span class="token-keyword">from</span> langchain_community.vectorstores <span class="token-keyword">import</span> Chroma
+<span class="token-keyword">from</span> langchain_community.embeddings <span class="token-keyword">import</span> HuggingFaceEmbeddings
+
+embeddings = HuggingFaceEmbeddings(
+    model_name=<span class="token-string">"BAAI/bge-small-en-v1.5"</span>
+)
+vector_db = Chroma(
+    collection_name=<span class="token-string">"ai_knowledge"</span>,
+    embedding_function=embeddings
+)
+results = vector_db.similarity_search(query, k=<span class="token-number">5</span>)</code></pre>
+                            </div>
+
+                            <!-- Tab 3: Console Output -->
+                            <div class="tab-pane" id="tab-output">
+                                <div class="terminal-output-log" id="terminal-log">
+                                    <p class="log-line success"><span class="log-tag">[INIT]</span> Agent StateGraph compiled successfully.</p>
+                                    <p class="log-line info"><span class="log-tag">[VECTOR DB]</span> Loaded 1,420 embeddings into ChromaDB.</p>
+                                    <p class="log-line info"><span class="log-tag">[PROMPT]</span> User: "Deploy end-to-end Property Predictor on AWS"</p>
+                                    <p class="log-line highlight"><span class="log-tag">[AGENT ACTION]</span> Executing tool: Streamlit + SVR pipeline...</p>
+                                    <p class="log-line success"><span class="log-tag">[STATUS 200]</span> Model active. Accuracy: 95.4% | AWS Endpoint Ready.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="terminal-footer">
+                            <span class="terminal-status"><i class="fa-solid fa-circle-check"></i> System Status: Online</span>
+                            <button class="btn-run-demo" id="btn-run-demo">
+                                <i class="fa-solid fa-play"></i> Run Agent Loop
+                            </button>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <strong>Machine Learning:</strong> Scikit-Learn, SciPy
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- METRICS / COUNTER STATS SECTION -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-target="15">0</h3>
+                            <span class="stat-plus">+</span>
+                            <p class="stat-label">AI & ML Projects</p>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <strong>Deep Learning:</strong> TensorFlow, Keras
+
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-target="300">0</h3>
+                            <span class="stat-plus">+</span>
+                            <p class="stat-label">LeetCode Problems</p>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <strong>Analysis:</strong> Exploratory Data Analysis (EDA)
+
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-target="95">0</h3>
+                            <span class="stat-plus">%</span>
+                            <p class="stat-label">Model Accuracy Benchmark</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-code-commit"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-target="500">0</h3>
+                            <span class="stat-plus">+</span>
+                            <p class="stat-label">GitHub Contributions</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Visualization & BI -->
-            <div class="skill-category reveal">
-                <h3><span class="category-icon">📊</span> Visualization & BI</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <strong>Python:</strong> Matplotlib, Seaborn, Plotly
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-subtitle"><i class="fa-solid fa-user-astronaut"></i> Discover My Journey</span>
+                    <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card main-bio-card">
+                        <div class="bio-header">
+                            <div class="avatar-wrapper">
+                                <div class="avatar-placeholder">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                            </div>
+                            <div class="bio-meta">
+                                <h3>Md Ahmod Akram Choudhury</h3>
+                                <p class="bio-subtitle">Postgraduate Student (MCA) at Aligarh Muslim University</p>
+                                <span class="location-badge"><i class="fa-solid fa-location-dot"></i> Karimganj, Assam, India</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bio-body">
+                            <p>
+                                I am an ambitious <strong>AI Engineer</strong> and <strong>Generative AI Developer</strong> with a passion for designing autonomous multi-agent systems, retrieval-augmented generation (RAG) pipelines, and production-ready machine learning solutions.
+                            </p>
+                            <p>
+                                Currently pursuing my <strong>Master of Computer Application (MCA)</strong> at <strong>Aligarh Muslim University</strong>, I bridge the gap between cutting-edge AI research and scalable software engineering.
+                            </p>
+
+                            <div class="bio-highlights">
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                    <div>
+                                        <h4>Agentic Architectures</h4>
+                                        <p>Designing stateful multi-agent graphs with LangGraph, LangChain & OpenAI API.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    <div>
+                                        <h4>Full-Cycle MLOps</h4>
+                                        <p>From EDA, feature engineering to model deployment on AWS with Streamlit & Docker.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <strong>Business Intelligence:</strong> Tableau, Power BI
+
+                    <div class="about-card-group">
+                        <div class="about-card feature-box">
+                            <div class="box-icon glow-cyan"><i class="fa-solid fa-microchip"></i></div>
+                            <h4>Generative AI & LLMs</h4>
+                            <p>Developing RAG applications, vector search indexes with FAISS & ChromaDB, prompt engineering, and LLM fine-tuning.</p>
+                        </div>
+
+                        <div class="about-card feature-box">
+                            <div class="box-icon glow-purple"><i class="fa-solid fa-chart-line"></i></div>
+                            <h4>Machine Learning & Data Science</h4>
+                            <p>Hands-on expertise with PyTorch, TensorFlow, Scikit-learn, exploratory data analysis, and predictive modeling.</p>
+                        </div>
+
+                        <div class="about-card feature-box">
+                            <div class="box-icon glow-emerald"><i class="fa-solid fa-layer-group"></i></div>
+                            <h4>Full Stack AI Integration</h4>
+                            <p>Integrating AI model microservices using FastAPI, Flask, React.js, Tailwind CSS, and SQL/NoSQL databases.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Full Stack Development -->
-            <div class="skill-category reveal">
-                <h3><span class="category-icon">💻</span> Full Stack Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <strong>Frontend:</strong> React.js, HTML5, CSS3, JavaScript
+
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-subtitle"><i class="fa-solid fa-laptop-code"></i> Portfolio Showcase</span>
+                        <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
                     </div>
-                    <div class="skill-item">
-                        <strong>Backend:</strong> Node.js, REST APIs
-                    </div>
-                    <div class="skill-item">
-                        <strong>Core:</strong> C, C++
+
+                    <!-- Project Category Filter Tabs -->
+                    <div class="project-filter-tabs">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="genai">AI & Agents</button>
+                        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                        <button class="filter-btn" data-filter="fullstack">Full Stack AI</button>
                     </div>
                 </div>
+
+                <!-- FEATURED HIGHLIGHT PROJECT -->
+                <div class="featured-banner-card" data-category="ml">
+                    <div class="featured-badge"><i class="fa-solid fa-star"></i> Featured Case Study</div>
+                    
+                    <div class="featured-grid">
+                        <div class="featured-info">
+                            <div class="project-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">AWS Cloud</span>
+                                <span class="tag">Streamlit</span>
+                            </div>
+                            <h3>Property Price Prediction System</h3>
+                            <p class="featured-desc">
+                                End-to-end machine learning system estimating real estate prices using regression techniques, SVR tuning, and rigorous feature selection (LASSO, RFE, Random Forest Importance). Deployed on AWS with an interactive Streamlit UI.
+                            </p>
+
+                            <ul class="featured-points">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>ML Pipeline:</strong> Missing value imputation, outlier filtering, and PCA transformation.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Explainable AI:</strong> Feature ranking via Lasso, Random Forest, & Recursive Elimination.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Interactive UI:</strong> Geo-spatial map analysis, amenity scoring, and property recommendations.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Cloud Deployment:</strong> Dockerized Streamlit web application hosted on AWS EC2.</li>
+                            </ul>
+
+                            <div class="tech-pills">
+                                <span>Python</span>
+                                <span>Scikit-learn</span>
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>Streamlit</span>
+                                <span>AWS</span>
+                                <span>Matplotlib</span>
+                            </div>
+
+                            <div class="featured-links">
+                                <button class="btn btn-primary modal-trigger-btn" data-project="property">
+                                    <i class="fa-solid fa-eye"></i> View Case Study
+                                </button>
+                                <a href="https://github.com/mdakram2001" target="_blank" class="btn btn-outline-sm">
+                                    <i class="fa-brands fa-github"></i> GitHub Source
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="featured-visual">
+                            <div class="mockup-window">
+                                <div class="mockup-bar">
+                                    <span class="mockup-title">AWS Streamlit Dashboard</span>
+                                </div>
+                                <div class="mockup-screen">
+                                    <div class="screen-header">
+                                        <i class="fa-solid fa-chart-area"></i> Property Analytics Engine
+                                    </div>
+                                    <div class="screen-metrics">
+                                        <div class="metric-box">
+                                            <span>R² Score</span>
+                                            <strong>0.942</strong>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span>MAE</span>
+                                            <strong>$1,240</strong>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span>Latency</span>
+                                            <strong>45ms</strong>
+                                        </div>
+                                    </div>
+                                    <div class="screen-chart-placeholder">
+                                        <div class="chart-bar-item" style="height: 60%;"></div>
+                                        <div class="chart-bar-item" style="height: 85%;"></div>
+                                        <div class="chart-bar-item" style="height: 45%;"></div>
+                                        <div class="chart-bar-item" style="height: 95%;"></div>
+                                        <div class="chart-bar-item" style="height: 70%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARDS GRID -->
+                <div class="projects-grid">
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="genai">
+                        <div class="project-card-header">
+                            <div class="project-icon"><i class="fa-solid fa-diagram-next"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/mdakram2001" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <span class="project-category">Generative AI</span>
+                        <h4 class="project-title">Autonomous Multi-Agent RAG Assistant</h4>
+                        <p class="project-snippet">
+                            Self-correcting research agent built using LangGraph & LangChain with vector retrieval, query re-writing, and dynamic tool calling.
+                        </p>
+                        <div class="project-stack">
+                            <span>LangGraph</span>
+                            <span>LangChain</span>
+                            <span>ChromaDB</span>
+                            <span>OpenAI</span>
+                        </div>
+                        <button class="btn-text modal-trigger-btn" data-project="rag">
+                            Read Details <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="ml">
+                        <div class="project-card-header">
+                            <div class="project-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/mdakram2001" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <span class="project-category">Deep Learning</span>
+                        <h4 class="project-title">Deep Churn & Sentiment Engine</h4>
+                        <p class="project-snippet">
+                            Neural network architecture for 98% precision churn forecasting & NLP medical consultation sentiment classification.
+                        </p>
+                        <div class="project-stack">
+                            <span>PyTorch</span>
+                            <span>TensorFlow</span>
+                            <span>HuggingFace</span>
+                            <span>Flask</span>
+                        </div>
+                        <button class="btn-text modal-trigger-btn" data-project="churn">
+                            Read Details <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-card-header">
+                            <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/mdakram2001" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <span class="project-category">Full Stack AI</span>
+                        <h4 class="project-title">Local Privacy LLM Workspace</h4>
+                        <p class="project-snippet">
+                            Privacy-first desktop workspace tool running local Ollama LLMs for code auditing, summary generation, and offline PDF analysis.
+                        </p>
+                        <div class="project-stack">
+                            <span>React</span>
+                            <span>FastAPI</span>
+                            <span>Ollama</span>
+                            <span>Tailwind</span>
+                        </div>
+                        <button class="btn-text modal-trigger-btn" data-project="local-llm">
+                            Read Details <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TECHNICAL SKILLS MATRIX SECTION -->
+        <section id="skills" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-subtitle"><i class="fa-solid fa-gears"></i> Technical Stack</span>
+                    <h2 class="section-title">Skills & <span class="text-gradient">Technologies</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Live Skill Search Bar -->
+                <div class="skill-search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="skill-search" placeholder="Search skills (e.g. LangChain, Python, AWS, PyTorch...)" />
+                </div>
+
+                <div class="skills-grid">
+                    
+                    <!-- Category 1: AI & Generative AI -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <span class="cat-icon glow-purple"><i class="fa-solid fa-brain"></i></span>
+                            <div>
+                                <h3>AI & Generative AI</h3>
+                                <p>Agents, LLMs, Vector Search & Neural Networks</p>
+                            </div>
+                        </div>
+                        <div class="skill-badges-list">
+                            <div class="skill-badge" data-name="langgraph"><i class="fa-solid fa-network-wired"></i> LangGraph</div>
+                            <div class="skill-badge" data-name="langchain"><i class="fa-solid fa-link"></i> LangChain</div>
+                            <div class="skill-badge" data-name="langsmith"><i class="fa-solid fa-eye"></i> LangSmith</div>
+                            <div class="skill-badge" data-name="rag"><i class="fa-solid fa-database"></i> RAG Pipelines</div>
+                            <div class="skill-badge" data-name="vectorstores"><i class="fa-solid fa-layer-group"></i> ChromaDB / FAISS</div>
+                            <div class="skill-badge" data-name="pytorch"><i class="fa-solid fa-fire"></i> PyTorch</div>
+                            <div class="skill-badge" data-name="tensorflow"><i class="fa-solid fa-cube"></i> TensorFlow</div>
+                            <div class="skill-badge" data-name="huggingface"><i class="fa-solid fa-face-smile"></i> Hugging Face</div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Languages & Core -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <span class="cat-icon glow-cyan"><i class="fa-solid fa-code"></i></span>
+                            <div>
+                                <h3>Languages & Core CS</h3>
+                                <p>Programming Languages & Data Structures</p>
+                            </div>
+                        </div>
+                        <div class="skill-badges-list">
+                            <div class="skill-badge" data-name="python"><i class="fa-brands fa-python"></i> Python</div>
+                            <div class="skill-badge" data-name="cpp"><i class="fa-solid fa-c"></i> C++</div>
+                            <div class="skill-badge" data-name="java"><i class="fa-brands fa-java"></i> Java</div>
+                            <div class="skill-badge" data-name="javascript"><i class="fa-brands fa-js"></i> JavaScript</div>
+                            <div class="skill-badge" data-name="sql"><i class="fa-solid fa-database"></i> SQL</div>
+                            <div class="skill-badge" data-name="html5"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: ML Frameworks & DBs -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <span class="cat-icon glow-emerald"><i class="fa-solid fa-cubes"></i></span>
+                            <div>
+                                <h3>ML Frameworks & DBs</h3>
+                                <p>Data Processing & Web Backend</p>
+                            </div>
+                        </div>
+                        <div class="skill-badges-list">
+                            <div class="skill-badge" data-name="scikit-learn"><i class="fa-solid fa-diagram-project"></i> Scikit-learn</div>
+                            <div class="skill-badge" data-name="pandas"><i class="fa-solid fa-table"></i> Pandas / NumPy</div>
+                            <div class="skill-badge" data-name="fastapi"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+                            <div class="skill-badge" data-name="flask"><i class="fa-solid fa-flask"></i> Flask</div>
+                            <div class="skill-badge" data-name="react"><i class="fa-brands fa-react"></i> React.js</div>
+                            <div class="skill-badge" data-name="mysql"><i class="fa-solid fa-database"></i> MySQL / PostgreSQL</div>
+                            <div class="skill-badge" data-name="mongodb"><i class="fa-solid fa-leaf"></i> MongoDB</div>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Cloud & Tools -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <span class="cat-icon glow-amber"><i class="fa-solid fa-cloud"></i></span>
+                            <div>
+                                <h3>Cloud, MLOps & Tools</h3>
+                                <p>Deployment, Containers & Productivity</p>
+                            </div>
+                        </div>
+                        <div class="skill-badges-list">
+                            <div class="skill-badge" data-name="aws"><i class="fa-brands fa-aws"></i> AWS (EC2, S3)</div>
+                            <div class="skill-badge" data-name="docker"><i class="fa-brands fa-docker"></i> Docker</div>
+                            <div class="skill-badge" data-name="git"><i class="fa-brands fa-git-alt"></i> Git / GitHub</div>
+                            <div class="skill-badge" data-name="streamlit"><i class="fa-solid fa-display"></i> Streamlit</div>
+                            <div class="skill-badge" data-name="linux"><i class="fa-brands fa-linux"></i> Linux / Bash</div>
+                            <div class="skill-badge" data-name="ollama"><i class="fa-solid fa-microchip"></i> Ollama</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Currently Exploring Frontiers Grid -->
+                <div class="exploring-wrapper">
+                    <h3 class="exploring-title"><i class="fa-solid fa-compass"></i> Frontiers & Currently Exploring</h3>
+                    <div class="exploring-grid">
+                        <div class="exploring-card">
+                            <div class="exp-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <h4>Agentic Workflows</h4>
+                            <p>Designing multi-agent autonomous decision loops using LangGraph with state persistence.</p>
+                        </div>
+                        <div class="exploring-card">
+                            <div class="exp-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <h4>Advanced RAG</h4>
+                            <p>Query routing, contextual compression, self-querying, and graph retrieval.</p>
+                        </div>
+                        <div class="exploring-card">
+                            <div class="exp-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <h4>LangSmith Tracing</h4>
+                            <p>LLM evaluation, cost optimization, latency tracking, and execution debugging.</p>
+                        </div>
+                        <div class="exploring-card">
+                            <div class="exp-icon"><i class="fa-solid fa-server"></i></div>
+                            <h4>High-Throughput Inference</h4>
+                            <p>vLLM, vector search concurrency, and low-latency cloud model endpoints.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CODING ACTIVITY & LIVE STATS SECTION -->
+        <section id="activity" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-subtitle"><i class="fa-solid fa-chart-line"></i> Developer Metrics</span>
+                    <h2 class="section-title">Coding <span class="text-gradient">Activity</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="activity-grid">
+                    
+                    <!-- GitHub Card -->
+                    <div class="activity-card">
+                        <div class="activity-card-header">
+                            <i class="fa-brands fa-github card-header-icon"></i>
+                            <div>
+                                <h3>GitHub Profile Analytics</h3>
+                                <p>Open source contributions & repositories (@mdakram2001)</p>
+                            </div>
+                        </div>
+
+                        <div class="stats-embed-wrapper">
+                            <img src="https://github-readme-stats.vercel.app/api?username=mdakram2001&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d111c&title_color=8b5cf6&text_color=94a3b8&icon_color=06b6d4" alt="GitHub Stats" class="stats-embed-img" loading="lazy">
+                            <img src="https://github-readme-streak-stats.herokuapp.com/?user=mdakram2001&theme=tokyonight&hide_border=true&background=0d111c&ring=8b5cf6&fire=06b6d4&currStreakNum=ffffff" alt="GitHub Streak" class="stats-embed-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- LeetCode Card -->
+                    <div class="activity-card">
+                        <div class="activity-card-header">
+                            <i class="fa-solid fa-code card-header-icon"></i>
+                            <div>
+                                <h3>LeetCode Metrics</h3>
+                                <p>Data structures & algorithmic problem solving (@akram2001)</p>
+                            </div>
+                        </div>
+
+                        <div class="stats-embed-wrapper">
+                            <img src="https://leetcard.jacoblin.cool/akram2001?theme=dark&font=Plus+Jakarta+Sans&ext=heatmap" alt="LeetCode Heatmap" class="stats-embed-img" loading="lazy">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EDUCATION & QUALIFICATIONS SECTION -->
+        <section id="education" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-subtitle"><i class="fa-solid fa-graduation-cap"></i> Academic Background</span>
+                    <h2 class="section-title">Education & <span class="text-gradient">Credentials</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="education-timeline">
+                    
+                    <!-- MCA -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot glow-purple"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <span class="edu-type">Postgraduate Degree</span>
+                                    <h3 class="edu-degree">Master of Computer Application (MCA)</h3>
+                                    <p class="edu-school"><i class="fa-solid fa-university"></i> Aligarh Muslim University, Aligarh</p>
+                                </div>
+                                <div class="edu-grade-badge">
+                                    <span>CGPA</span>
+                                    <strong>8.3 / 10.0</strong>
+                                </div>
+                            </div>
+                            <p class="edu-desc">
+                                Specialized in Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Advanced Database Systems, and Cloud Computing.
+                            </p>
+                            <div class="edu-skills">
+                                <span>Machine Learning</span>
+                                <span>Algorithms</span>
+                                <span>DBMS</span>
+                                <span>Software Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- B.Sc -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot glow-cyan"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <span class="edu-type">Undergraduate Degree</span>
+                                    <h3 class="edu-degree">Bachelor of Science (B.Sc)</h3>
+                                    <p class="edu-school"><i class="fa-solid fa-university"></i> Aligarh Muslim University, Aligarh</p>
+                                </div>
+                                <div class="edu-grade-badge">
+                                    <span>CGPA</span>
+                                    <strong>7.3 / 10.0</strong>
+                                </div>
+                            </div>
+                            <p class="edu-desc">
+                                Focused on Computer Science fundamentals, Higher Mathematics, Physics, and Statistical Methods for Data Analysis.
+                            </p>
+                            <div class="edu-skills">
+                                <span>Computer Science</span>
+                                <span>Mathematics</span>
+                                <span>Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-subtitle"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+                    <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    
+                    <!-- Contact Info Panel -->
+                    <div class="contact-info-panel">
+                        <h3>Let's build something extraordinary together.</h3>
+                        <p>
+                            Whether you have an exciting AI role, a generative AI project, or want to discuss machine learning systems, feel free to drop me a message!
+                        </p>
+
+                        <div class="info-items-list">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="info-content">
+                                    <span>Direct Email</span>
+                                    <a href="mailto:ahmodakramchoudhury@gmail.com" id="email-link">ahmodakramchoudhury@gmail.com</a>
+                                </div>
+                                <button class="copy-btn" data-copy="ahmodakramchoudhury@gmail.com" title="Copy Email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="info-content">
+                                    <span>Location</span>
+                                    <p>Karimganj, Assam, India</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-globe"></i></div>
+                                <div class="info-content">
+                                    <span>Official Website</span>
+                                    <a href="https://akramchy.me" target="_blank">akramchy.me</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-row">
+                            <a href="https://github.com/mdakram2001" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://linkedin.com/in/md-ahmod-akram-choudhury" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                            <a href="https://leetcode.com/akram2001" target="_blank" class="social-btn"><i class="fa-solid fa-code"></i> LeetCode</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-panel">
+                        <form id="contact-form" class="contact-form">
+                            
+                            <!-- Quick Subject Chips -->
+                            <div class="form-preset-chips">
+                                <span>Quick Subject:</span>
+                                <button type="button" class="chip-btn active" data-preset="Job Opportunity / Role">💼 Job Opportunity</button>
+                                <button type="button" class="chip-btn" data-preset="AI Project Collaboration">🤖 AI Project</button>
+                                <button type="button" class="chip-btn" data-preset="General Inquiry">💬 General Inquiry</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <input type="text" id="subject" name="subject" value="Job Opportunity / Role" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <div class="input-wrapper textarea-wrapper">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                    <textarea id="message" name="message" rows="4" placeholder="Hi Akram, I would love to discuss..." required></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block glow-btn" id="form-submit-btn">
+                                <span><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                    <span class="logo-text">AKRAM<span class="accent-dot">.AI</span></span>
+                </a>
+                <p>&copy; 2026 Md Ahmod Akram Choudhury. All rights reserved.</p>
+            </div>
+
+            <div class="footer-center">
+                <p>Engineered with <i class="fa-solid fa-heart heart-icon"></i> & modern web technologies.</p>
+            </div>
+
+            <div class="footer-right">
+                <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to Top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- PROJECT DETAILS MODAL -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-content-body" id="modal-body">
+                <!-- Dynamically injected via script.js -->
             </div>
         </div>
     </div>
-</section>
 
 
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="toast-container"></div>
 
-<section id="contact" class="section-contact" data-scroll-section>
-    <div class="section-container">
-        <h2 class="section-title reveal">Let's Connect</h2>
-        <p class="section-subtitle reveal">Get in touch and let's collaborate on something amazing</p>
-        <div class="contact-content reveal">
-            <a href="mailto:contact@akram.com" class="btn btn-primary">Send an Email</a>
-            <div class="social-icons">
-                <a href="https://github.com" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2026 Akram. All rights reserved.</p>
-        <p>Crafted with <span class="heart">♥</span> using modern web technologies</p>
-    </div>
-</footer>
-
-</div>
-
-<!-- Project Modal -->
-<div class="project-modal" id="projectModal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-        <button class="modal-close">&times;</button>
-        <h2 id="modalTitle"></h2>
-        <p id="modalDesc"></p>
-    </div>
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/gsap@3.12.2/ScrambleTextPlugin.min.js"></script>
-<script src="script.js"></script>
-
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
