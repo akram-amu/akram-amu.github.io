@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
     <meta name="description"
         content="Md Ahmod Akram Choudhury - AI Engineer & Generative AI Developer specializing in LangGraph, LangChain, LLMs, RAG Pipelines, and Machine Learning Systems." />
     <meta name="keywords"
@@ -35,6 +35,9 @@
     <div class="ambient-glow glow-2"></div>
     <div class="ambient-glow glow-3"></div>
 
+    <!-- Mobile Navigation Backdrop Overlay -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
     <!-- Navigation Bar -->
     <header class="navbar-header">
         <nav class="navbar" id="navbar">
@@ -51,6 +54,12 @@
                 <li><a href="#activity" class="nav-link">Activity</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="mobile-nav-cta">
+                    <a href="#contact" class="btn btn-primary btn-block glow-btn">
+                        <span>Get in Touch</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </li>
             </ul>
 
             <div class="nav-actions">
@@ -58,7 +67,7 @@
                     <span>Get in Touch</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -748,7 +757,7 @@ results = vector_db.similarity_search(query, k=<span class="token-number">5</spa
                                 </div>
                                 <div class="edu-grade-badge">
                                     <span>CGPA</span>
-                                    <strong>8.3 / 10.0</strong>
+                                    <strong>8.5 / 10.0</strong>
                                 </div>
                             </div>
                             <p class="edu-desc">

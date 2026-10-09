@@ -17,16 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let mouse = { x: width / 2, y: height / 2, radius: 150 };
 
+        let resizeTimeout;
         window.addEventListener("resize", () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initParticles();
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (Math.abs(window.innerWidth - width) > 30) {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                    initParticles();
+                }
+            }, 150);
         });
 
         window.addEventListener("mousemove", (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
-        });
+        }, { passive: true });
+
+        window.addEventListener("touchmove", (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            }
+        }, { passive: true });
 
         class Particle {
             constructor() {
@@ -70,7 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let particles = [];
         function initParticles() {
             particles = [];
-            const count = Math.min(Math.floor((width * height) / 14000), 75);
+            const isMobile = window.innerWidth < 768;
+            const count = isMobile
+                ? Math.min(Math.floor((width * height) / 28000), 25)
+                : Math.min(Math.floor((width * height) / 14000), 75);
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
             }
@@ -503,16 +519,54 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Mobile drawer toggle
+        // Mobile drawer toggle & Backdrop
+        const navOverlay = document.getElementById("nav-overlay");
+        const allNavLinks = document.querySelectorAll(".nav-link, .mobile-nav-cta a");
+
+        function openMobileMenu() {
+            navLinksContainer.classList.add("mobile-open");
+            mobileToggle.classList.add("active");
+            mobileToggle.setAttribute("aria-expanded", "true");
+            if (navOverlay) navOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMobileMenu() {
+            navLinksContainer.classList.remove("mobile-open");
+            mobileToggle.classList.remove("active");
+            mobileToggle.setAttribute("aria-expanded", "false");
+            if (navOverlay) navOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
         if (mobileToggle && navLinksContainer) {
             mobileToggle.addEventListener("click", () => {
-                navLinksContainer.classList.toggle("mobile-open");
+                const isOpen = navLinksContainer.classList.contains("mobile-open");
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
             });
 
-            navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    navLinksContainer.classList.remove("mobile-open");
-                });
+            if (navOverlay) {
+                navOverlay.addEventListener("click", closeMobileMenu);
+            }
+
+            allNavLinks.forEach(link => {
+                link.addEventListener("click", closeMobileMenu);
+            });
+
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && navLinksContainer.classList.contains("mobile-open")) {
+                    closeMobileMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 768 && navLinksContainer.classList.contains("mobile-open")) {
+                    closeMobileMenu();
+                }
             });
         }
     })();
